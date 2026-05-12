@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    background: #F2F2F7;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .sf-card {
+    @apply bg-white rounded-sf border border-sf-sep p-3.5;
+  }
+  .sf-card-lg {
+    @apply bg-white rounded-sf-lg border border-sf-sep p-4;
+  }
+  .sf-lbl {
+    @apply text-xs font-medium text-sf-t2 uppercase tracking-wider mb-2;
+  }
+  .sf-pill {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .sf-btn {
+    @apply flex items-center justify-center gap-1.5 px-3 py-2 rounded-sf-sm
+           border border-sf-sep bg-sf-bg text-sf-t1 text-sm font-medium
+           cursor-pointer transition-all duration-100
+           hover:bg-sf-sep active:scale-[0.98];
+  }
+  .sf-btn-primary {
+    @apply sf-btn bg-info text-white border-info hover:bg-blue-600;
+  }
+  .sf-btn-accent {
+    @apply sf-btn bg-accent text-white border-accent hover:bg-accent-dark;
+  }
+  .sf-btn-success {
+    @apply sf-btn bg-success text-white border-success hover:bg-green-500;
+  }
+  .sf-metric {
+    @apply sf-card flex flex-col gap-1.5;
+  }
+  .sf-prog-bar {
+    @apply h-1.5 bg-sf-bg rounded-full overflow-hidden;
+  }
+  .nav-item {
+    @apply flex items-center gap-2 px-2.5 py-1.5 rounded-sf-sm
+           text-sm text-sf-t2 cursor-pointer transition-all duration-100
+           hover:bg-sf-bg;
+  }
+  .nav-item.active {
+    background: #FF3B3010;
+    color: #FF3B30;
+    @apply font-medium;
+  }
+}
